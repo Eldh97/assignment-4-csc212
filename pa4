@@ -1,0 +1,72 @@
+
+		if(p == null)
+			return count ;
+		
+		int res = key.compareTo(p.key);
+		
+		count++;
+
+		if(res == 0 ) {
+			return count ;
+			
+		}
+		
+		BSTNode<K,T> n = (BSTNode<K,T>) p.data; //here
+		while(n != null) {
+			
+			 res = key.compareTo(n.key);
+
+				
+				if(res == 0) {
+					count++;
+					return count ;
+				}else if (res < 0) {
+					count++;
+					n = n.left;
+				}else {
+					count ++;
+					n = n.right;
+				}
+				
+				
+			}
+		
+		count = recComp(p.right, key , count);
+		count = recComp(p.left, key , count);
+		
+	return 	count ;
+		
+		
+	private int recComp(BSTNode<K,T> p, K key , int count  ) {
+
+		if(p == null)
+			return count ;
+		
+		int res = key.compareTo(p.key);
+		
+		count++;
+
+		if(res == 0 ) {
+			return count ;
+			
+		}
+		
+		BSTNode<K,T> n = (BSTNode<K,T>) p.data; //here
+		while(n != null) {
+			
+			 res = key.compareTo(n.key);
+
+				
+				if(res == 0) {
+					count++;
+					return count ;
+				}else if (res < 0) {
+					count++;
+					n = n.left;
+				}else {
+					count ++;
+					n = n.right;
+				}
+				
+				
+			}
